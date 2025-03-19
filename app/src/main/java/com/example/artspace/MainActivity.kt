@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -153,7 +154,7 @@ fun ArtSpaceLayout() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Button(
-                    onClick = { currentIndex = (currentIndex - 1 + artworks.size) % artworks.size },
+                    onClick = { currentIndex = (currentIndex - 1) % artworks.size },
                     modifier = Modifier.padding(14.dp, 2.dp)
                 ) {
                     Text(text = "Previous", fontSize = 12.sp)
